@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - feature/deploy-with-gh-pages
 
 jobs:
   deploy:
@@ -16,11 +15,9 @@ jobs:
         with:
           node-version: '16'
       - name: Install packages
-        run: |
-          yarn install
+        run: yarn install
       - name: Build App
-        run: |
-          yarn build
+        run: yarn build
         env:
           PUBLIC_URL: https://akhrszk.github.io/clock
       - name: Deploy with gh-pages
