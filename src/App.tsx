@@ -4,6 +4,7 @@ import { Clock, Timer, Stopwatch } from './components'
 
 const App: React.FC = () => (
   <div className="App">
+    <h1>Clock</h1>
     <nav>
       <ul>
         <li><Link to='/clock'>時計</Link></li>

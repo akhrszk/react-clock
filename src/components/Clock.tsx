@@ -3,7 +3,7 @@ import useInterval from '../hooks/useInterval'
 
 export const Clock: React.FC = () => {
   const [timestamp, setTimestamp] = useState(now())
-  const update = useCallback((t) => setTimestamp(t), [])
+  const update = useCallback(t => setTimestamp(t), [])
   useInterval({
     onUpdate: () => {
       update(now())

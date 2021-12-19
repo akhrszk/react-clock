@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  push:
+    branches-ignore:
+      - gh-pages
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install packages
+        run: yarn install
+      - name: Link code
+        run: yarn lint
+      - name: Run test
+        run: yarn test --all
