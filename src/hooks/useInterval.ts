@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react'
+import { useEffect, useReducer, useRef } from 'react'
 
 export type Action = { type: 'start' | 'stop'; payload?: unknown }
 
@@ -9,10 +9,12 @@ type Control = {
 
 type State = 'RUNNING' | 'STOPPED'
 
+type OnUpdate = () => void
+
 type Options = {
   interval: number
   autostart: boolean
-  onUpdate?: () => void
+  onUpdate?: OnUpdate
 }
 
 const reducer = (state: State, action: Action): State => {
@@ -31,6 +33,8 @@ export const useInterval = ({
   autostart = false,
   onUpdate,
 }: Partial<Options>): [State, Control] => {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  const onUpdateRef = useRef<OnUpdate>(() => {})
   const [state, dispatch] = useReducer(reducer, 'STOPPED')
   const start = () => {
     dispatch({ type: 'start' })
@@ -38,6 +42,10 @@ export const useInterval = ({
   const stop = () => {
     dispatch({ type: 'stop' })
   }
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    onUpdateRef.current = onUpdate ?? (() => {})
+  }, [onUpdate])
   useEffect(() => {
     if (autostart) {
       dispatch({ type: 'start' })
@@ -47,7 +55,7 @@ export const useInterval = ({
     let timerId: NodeJS.Timeout | undefined = undefined
     if (state === 'RUNNING') {
       timerId = setInterval(() => {
-        onUpdate && onUpdate()
+        onUpdateRef.current()
       }, interval)
     } else {
       timerId && clearInterval(timerId)
@@ -55,8 +63,8 @@ export const useInterval = ({
     return () => {
       timerId && clearInterval(timerId)
     }
-  }, [interval, state, onUpdate])
-  return ['STOPPED', { start, stop }]
+  }, [interval, state])
+  return [state, { start, stop }]
 }
 
 export default useInterval
