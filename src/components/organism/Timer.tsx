@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { TimerDisplay } from '../molecule/TimerDisplay'
 import { Button } from '../atom/Button'
-import { ChevronButton } from '../atom/ChevronButton'
 import useInterval from '../../hooks/useInterval'
 
 type Props = {
