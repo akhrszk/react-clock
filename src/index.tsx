@@ -5,14 +5,9 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
-const basename = (url: string) => {
-  const found = url.match(/^http[s]?:\/\/[a-z.]+[:\d]*(\/[a-z/]+)$/)
-  return (found && found[1]) || undefined
-}
-
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename={basename(process.env.PUBLIC_URL)}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
