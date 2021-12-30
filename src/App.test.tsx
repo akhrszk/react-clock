@@ -7,7 +7,7 @@ test('renders learn react link', () => {
   render(
     <MemoryRouter>
       <App />
-    </MemoryRouter>
+    </MemoryRouter>,
   )
   const titleElement = screen.getByText(/clock/i)
   expect(titleElement).toBeInTheDocument()

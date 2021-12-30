@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals'
 
 const basename = (url: string) => {
   const found = url.match(/^http[s]?:\/\/[a-z.]+[:\d]*(\/[a-z/]+)$/)
-  return found && found[1] || undefined
+  return (found && found[1]) || undefined
 }
 
 ReactDOM.render(
