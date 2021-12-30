@@ -8,15 +8,21 @@ const interval = 10
 export const Stopwatch: React.FC = () => {
   const [time, setTime] = useState(0)
   const update = useCallback((t: number) => setTime(t), [])
-  const [, { start, stop }] = useInterval({
+  const [state, { start, stop }] = useInterval({
     interval,
     onUpdate: () => update(time + interval),
   })
   return (
     <div>
       <TimerDisplay time={time} />
-      <div className="flex gap-3">
+      <div className="flex gap-3 py-3">
         <Button label="start" size="large" onClick={() => start()} primary />
+        <Button
+          label="reset"
+          size="large"
+          onClick={() => state !== 'RUNNING' && setTime(0)}
+          primary
+        />
         <Button label="stop" size="large" onClick={() => stop()} primary />
       </div>
     </div>

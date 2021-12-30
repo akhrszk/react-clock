@@ -17,5 +17,11 @@ const Template: ComponentStory<typeof TimerDisplay> = args => (
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Default = Template.bind({})
 Default.args = {
-  time: 360 * 1000,
+  time: 180 * 1000,
+}
+
+export const Editable = Template.bind({})
+Editable.args = {
+  time: 180 * 1000,
+  editable: true,
 }
