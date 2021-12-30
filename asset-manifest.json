@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "https://akhrszk.github.io/clock/static/css/main.3a831ae0.css",
-    "main.js": "https://akhrszk.github.io/clock/static/js/main.314ab504.js",
-    "static/js/787.4019c375.chunk.js": "https://akhrszk.github.io/clock/static/js/787.4019c375.chunk.js",
-    "index.html": "https://akhrszk.github.io/clock/index.html",
-    "main.3a831ae0.css.map": "https://akhrszk.github.io/clock/static/css/main.3a831ae0.css.map",
-    "main.314ab504.js.map": "https://akhrszk.github.io/clock/static/js/main.314ab504.js.map",
-    "787.4019c375.chunk.js.map": "https://akhrszk.github.io/clock/static/js/787.4019c375.chunk.js.map"
+    "main.css": "https://akhrszk.github.io/react-clock/static/css/main.3a831ae0.css",
+    "main.js": "https://akhrszk.github.io/react-clock/static/js/main.ebd933d3.js",
+    "static/js/787.8533411f.chunk.js": "https://akhrszk.github.io/react-clock/static/js/787.8533411f.chunk.js",
+    "index.html": "https://akhrszk.github.io/react-clock/index.html",
+    "main.3a831ae0.css.map": "https://akhrszk.github.io/react-clock/static/css/main.3a831ae0.css.map",
+    "main.ebd933d3.js.map": "https://akhrszk.github.io/react-clock/static/js/main.ebd933d3.js.map",
+    "787.8533411f.chunk.js.map": "https://akhrszk.github.io/react-clock/static/js/787.8533411f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3a831ae0.css",
-    "static/js/main.314ab504.js"
+    "static/js/main.ebd933d3.js"
   ]
 }
