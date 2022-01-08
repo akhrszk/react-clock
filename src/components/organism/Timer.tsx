@@ -21,7 +21,7 @@ export const Timer: React.FC<Props> = ({ initial }) => {
     if (time <= 0) {
       stop()
     }
-  }, [time])
+  }, [time, stop])
   return (
     <div>
       <TimerDisplay
